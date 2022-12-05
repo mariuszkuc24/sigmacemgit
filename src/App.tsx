@@ -20,7 +20,7 @@ const App = () => {
             </div>
             <ul className='navbar__list'>
               <li className='navbar__list-item'>
-                <Link to="/">Strona</Link>
+                <Link to="/">Strona Główna</Link>
               </li>
               <li className='navbar__list-item'>
                 <Link to="/pilot">Program pilotażowy</Link>
