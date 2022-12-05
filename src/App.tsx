@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Landing from './components/Landing/Landing';
 import Pilot from './components/Pilot/Pilot';
 import Skuchecker from './components/Skuchecker/skuchecker';
+import Login from './components/Login/login';
 import logo from './assets/logo-light-2021.png';
 import reportIcon from './assets/images/alert.svg';
 import './App.css';
@@ -29,6 +30,9 @@ const App = () => {
                 <Link to="/skuchecker">Sprawdź dział produktu</Link>
               </li>
               <li className='navbar__list-item'>
+                <Link to="/login">Zaloguj</Link>
+              </li>
+              <li className='navbar__list-item'>
                 <a className="report-error" target="_blank" rel="noopener noreferrer"
                   href="https://forms.clickup.com/2441912/f/2agnr-2588/AKR8LYVGRWAJMZPHUO"><img src={reportIcon} alt="rep" />Zgłoś błąd Manago!</a>
               </li>
@@ -40,6 +44,7 @@ const App = () => {
             <Route path='/' element={< Landing />}></Route>
             <Route path='/pilot' element={< Pilot />}></Route>
             <Route path='/skuchecker' element={< Skuchecker />}></Route>
+            <Route path='/login' element={< Login />}></Route>
           </Routes>
         </div>
 
