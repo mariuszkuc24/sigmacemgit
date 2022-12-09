@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Landing from './components/Landing/Landing';
 import Pilot from './components/Pilot/Pilot';
 import Skuchecker from './components/Skuchecker/skuchecker';
-import Login from './components/Login/login';
+import Login from './components/Login/Login';
 import logo from './assets/logo-light-2021.png';
 import reportIcon from './assets/images/alert.svg';
 import './App.css';

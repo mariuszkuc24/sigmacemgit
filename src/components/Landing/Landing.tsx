@@ -2,6 +2,18 @@ import React from "react";
 import { useState } from "react";
 import "./landing.scss";
 const Landing = () => {
+  const urlManago360 = "https://manago360.com/pl/azure/sigmacem/login";
+  const urlMagento ="https://admin.castorama.pl/index.php/magento/sales_order/index/key/b1e59173d955e2db295e60fb01126ca5b763d6c45c093482c28d4cb277a39a43/";
+  const urlDTS = "http://platform.dts.pl/login";
+  const urlOrderPanel = "https://admin.castorama.pl/phone-order-panel//";
+  const urlProductComments="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Kopia%20pliku%20Produktowe3.xlsx?d=w432c89357ac243b1b6181b051a0f6019&csf=1&web=1&e=ncfmv7";
+  const urlCastoramaMainPage = "https://www.castorama.pl/";
+  const urlCastoramaFindShop ="https://www.castorama.pl/informacje/sklepy";
+  const urlCastoramaRegulations="https://www.castorama.pl/inne-regulaminy";
+  const urlCastoramaAtomia="https://mebleatomia.castorama.pl/";
+  const urlCastoramaKitchen="https://kuchnie.castorama.pl/";
+  const urlCastoramaFurnitureAssembly = "https://kuchnie.castorama.pl/pl/zakup-i-montaz/usluga-montazu/";
+
   return (
     <div>
       <section className="section-container casto-color">
@@ -13,7 +25,7 @@ const Landing = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://manago360.com/pl/azure/sigmacem/login"
+            href={urlManago360}
           >
             Manago 360
           </a>
@@ -21,7 +33,7 @@ const Landing = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://admin.castorama.pl/index.php/magento/sales_order/index/key/b1e59173d955e2db295e60fb01126ca5b763d6c45c093482c28d4cb277a39a43/"
+            href={urlMagento}
           >
             Magento
           </a>
@@ -29,7 +41,7 @@ const Landing = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="http://platform.dts.pl/login"
+            href={urlDTS}
           >
             DTS
           </a>
@@ -37,7 +49,7 @@ const Landing = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://admin.castorama.pl/phone-order-panel//"
+            href={urlOrderPanel}
           >
             Order Panel
           </a>
@@ -45,7 +57,7 @@ const Landing = () => {
             className="btn-link btn--red"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Kopia%20pliku%20Produktowe3.xlsx?d=w432c89357ac243b1b6181b051a0f6019&csf=1&web=1&e=ncfmv7"
+            href={urlProductComments}
           >
             Produktowe
           </a>
@@ -54,7 +66,7 @@ const Landing = () => {
           <h2>Castorama - Poradniki do systemów</h2>
         </div>
         <section className="section-links__container">
-          <a className="btn-link" rel="noopener noreferrer" href="">
+          <a className="btn-link" rel="noopener noreferrer" href="#">
             Manago 360
           </a>
         </section>
@@ -68,7 +80,7 @@ const Landing = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.castorama.pl/"
+            href={urlCastoramaMainPage}
           >
             Castorama
           </a>
@@ -76,7 +88,7 @@ const Landing = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.castorama.pl/informacje/sklepy"
+            href={urlCastoramaFindShop}
           >
             Znajdź Sklep
           </a>
@@ -84,7 +96,7 @@ const Landing = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.castorama.pl/inne-regulaminy"
+            href={urlCastoramaRegulations}
           >
             Regulaminy
           </a>
@@ -92,7 +104,7 @@ const Landing = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://mebleatomia.castorama.pl/"
+            href={urlCastoramaAtomia}
           >
             Meble Atomia
           </a>
@@ -100,7 +112,7 @@ const Landing = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://kuchnie.castorama.pl/"
+            href={urlCastoramaKitchen}
           >
             Kuchnie
           </a>
@@ -108,7 +120,7 @@ const Landing = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://kuchnie.castorama.pl/pl/zakup-i-montaz/usluga-montazu/"
+            href={urlCastoramaFurnitureAssembly}
           >
             Montaż jaka firma
           </a>
