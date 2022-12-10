@@ -1,7 +1,15 @@
 import React from "react";
 import { useState } from "react";
 import "./pilot.scss";
-const Pilot = () => {
+const urlProcedures = "https://intelevospzoo.sharepoint.com/:w:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa/Pilot_Wroc%C5%82aw_Warszawa_scenariusze_post%C4%99powania.docx?d=w654a3254fd804b0d830335e4733b5026&csf=1&web=1&e=s1p7vk";
+const urlContactListSzczecin ="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa_Szczecin_Stargard/Kontakt_Szczecin_Stargard_fin.xlsx?d=w05a6c94df30549129cec74f144430942&csf=1&web=1&e=sNSptb";
+const urlContactListWarszawa="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa/Kontakt_Warszawa_Pilot_aktualizacja24.10.xlsx?d=wec54f71b218949e3977b82e03fbe1048&csf=1&web=1&e=1auWyg";
+const urlContactListWroclaw="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa/Kontakt%20ze%20sklepem-%20z%20kim%20si%C4%99%20kontaktowa%C4%87-%20Wroc%C5%82aw..xlsx?d=w08dc2cfa5241425a891ce2423b4f881b&csf=1&web=1&e=gCYptJ";
+const urlContactToAll ="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Aktualne_Zestawienie_Kontaktowe_Castorama%2027.06.2022.xlsx?d=w7daa371e51894b58aa0922af97f47971&csf=1&web=1&e=cKs0O8";
+const urlServicesListSzczecin="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa_Szczecin_Stargard/Szczecin_Stargard_us%C5%82ugi_fin2.xlsx?d=wfa892ccfca0e457d9d7c73c028464b07&csf=1&web=1&e=PsVUEc";
+const urlServicesListWarszawa="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa_Szczecin_Stargard/Kopia%20pliku%20Pilot%20Warszawa%20-%20Us%C5%82ugi_finalna_wersja.xlsx?d=wdcf17179ff394eecae44a1be24ab226f&csf=1&web=1&e=GAowoW";
+const urlServicesListWroclaw="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa/zestawienia_do%20uzupe%C5%82nienia%20sklepy_ca%C5%82o%C5%9B%C4%87%201.xlsx?d=w717b6aa3d15b4377a2dbff687b3063de&csf=1&web=1&e=hzYYLu";
+const Pilot = () => { 
   return (
     <div>
       <section className="section-container casto-color">
@@ -13,7 +21,7 @@ const Pilot = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://intelevospzoo.sharepoint.com/:w:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa/Pilot_Wroc%C5%82aw_Warszawa_scenariusze_post%C4%99powania.docx?d=w654a3254fd804b0d830335e4733b5026&csf=1&web=1&e=s1p7vk"
+            href={urlProcedures}
           >
             Procedury
           </a>
@@ -21,7 +29,7 @@ const Pilot = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa_Szczecin_Stargard/Kontakt_Szczecin_Stargard_fin.xlsx?d=w05a6c94df30549129cec74f144430942&csf=1&web=1&e=sNSptb"
+            href={urlContactListSzczecin}
           >
             Kontakt Szczecin
           </a>
@@ -29,7 +37,7 @@ const Pilot = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa/Kontakt_Warszawa_Pilot_aktualizacja24.10.xlsx?d=wec54f71b218949e3977b82e03fbe1048&csf=1&web=1&e=1auWyg"
+            href={urlContactListWarszawa}
           >
             Kontakt Warszawa
           </a>
@@ -37,7 +45,7 @@ const Pilot = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa/Kontakt%20ze%20sklepem-%20z%20kim%20si%C4%99%20kontaktowa%C4%87-%20Wroc%C5%82aw..xlsx?d=w08dc2cfa5241425a891ce2423b4f881b&csf=1&web=1&e=gCYptJ"
+            href={urlContactListWroclaw}
           >
             Kontakt Wrocław
           </a>
@@ -45,7 +53,7 @@ const Pilot = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://intelevospzoo-my.sharepoint.com/:x:/r/personal/jaroslaw_mazurek_sigmacem_com/_layouts/15/doc2.aspx?sourcedoc=%7B3ED3B6F1-E6AD-47C3-9BBA-12B296E0CF42%7D&file=Aktualne_Zestawienie_Kontaktowe_Castorama%2027.06.2022.xlsx&wdOrigin=OFFICECOM-WEB.MAIN.SEARCH&ct=1665745087391&action=default&mobileredirect=true&cid=42235211-6328-4f57-88c5-7120167f1e75"
+            href={urlContactToAll}
           >
             Kontakt Zestawienie
           </a>
@@ -53,7 +61,7 @@ const Pilot = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa_Szczecin_Stargard/Szczecin_Stargard_us%C5%82ugi_fin2.xlsx?d=wfa892ccfca0e457d9d7c73c028464b07&csf=1&web=1&e=PsVUEc"
+            href={urlServicesListSzczecin}
           >
             Usługi Szczecin
           </a>
@@ -61,7 +69,7 @@ const Pilot = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa_Szczecin_Stargard/Kopia%20pliku%20Pilot%20Warszawa%20-%20Us%C5%82ugi_finalna_wersja.xlsx?d=wdcf17179ff394eecae44a1be24ab226f&csf=1&web=1&e=GAowoW"
+            href={urlServicesListWarszawa}
           >
             Usługi Warszawa
           </a>
@@ -69,7 +77,7 @@ const Pilot = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa/zestawienia_do%20uzupe%C5%82nienia%20sklepy_ca%C5%82o%C5%9B%C4%87%201.xlsx?d=w717b6aa3d15b4377a2dbff687b3063de&csf=1&web=1&e=hzYYLu"
+            href={urlServicesListWroclaw}
           >
             Usługi Wrocław
           </a>
@@ -77,46 +85,52 @@ const Pilot = () => {
       </section>
       <section className="task" id="sklepy_lista-obslugiwanych-sklepow">
         <div className="task__header">
-          <h2>Lista obłsugiwanych sklepów</h2>
+          <h2>Lista obsługiwanych sklepów</h2>
         </div>
         <section className="task__description">
-          <div className="task__description-header">
-            <h3>
-              Hybrydy ( w ich przypadku dodajemy kategorie główną "Hybryda" jeśli do
-              nich dzwonimy piszemy )
-            </h3>
-          </div>
-          <div className="task__description-more">
-            <ul>
-              <li>Stargard ul. Tadeusza Kościuszki 73a</li>
-              <li>Świnoujście - Castorama Smart ul. Wojska Polskiego 96</li>
-              <li>Szczecin Ku Słońcu ul. Ku Słońcu 67b </li>
-              <li>Szczecin Południowa ul. Południowa 21</li>
-              <li>Szczecin Struga ul. Wiosenna 80</li>
-              <li>Warszawa Grochowska ul. Grochowska 21</li>
-              <li>Warszawa Okęcie Al. Krakowska 75</li>
-              <li>Warszawa Targówek ul. Głębocka 15a</li>
-              <li>Warszawa Wola Park ul. Górczewska 124</li>
-              <li>Warszawa Włochy ul. Popularna 71</li>
-              <li>Wrocław Bielany Wrocławskie ul. Czekoladowa 3</li>
-              <li>Wrocław Graniczna ul. Graniczna 2a</li>
-              <li>Wrocław Korona ul. B. Krzywoustego 126a</li>
-              <li>Wrocław Magnolia ul. Legnicka 58</li>
-            </ul>
-          </div>
-          <div className="task__description-header">
-            <h3>Pozostałe</h3>
-          </div>
-          <div className="task__description-more">
-            <ul>
-              <li>Augustów Castorama Smart ul. Mazurska 10</li>
-              <li>Mława Castorama Smart Al. Świętego Wojciecha 17</li>
-              <li>
-                Ostrów Wielkopolski Castorama Smart ul. Ks. Prałata Czesława
-                Majorka 2
-              </li>
-              <li>Warszawa Ursus Express ul. Herbu Oksza 24</li>
-            </ul>
+          <div className="task-content-divide-half">
+            <div className="half">
+              <div className="task__description-header">
+                <h3>
+                  Hybrydy ( w ich przypadku dodajemy kategorie główną "Hybryda"
+                  jeśli do nich dzwonimy piszemy )
+                </h3>
+              </div>
+              <div className="task__description-more">
+                <ul>
+                  <li>Stargard ul. Tadeusza Kościuszki 73a</li>
+                  <li>Świnoujście - Castorama Smart ul. Wojska Polskiego 96</li>
+                  <li>Szczecin Ku Słońcu ul. Ku Słońcu 67b </li>
+                  <li>Szczecin Południowa ul. Południowa 21</li>
+                  <li>Szczecin Struga ul. Wiosenna 80</li>
+                  <li>Warszawa Grochowska ul. Grochowska 21</li>
+                  <li>Warszawa Okęcie Al. Krakowska 75</li>
+                  <li>Warszawa Targówek ul. Głębocka 15a</li>
+                  <li>Warszawa Wola Park ul. Górczewska 124</li>
+                  <li>Warszawa Włochy ul. Popularna 71</li>
+                  <li>Wrocław Bielany Wrocławskie ul. Czekoladowa 3</li>
+                  <li>Wrocław Graniczna ul. Graniczna 2a</li>
+                  <li>Wrocław Korona ul. B. Krzywoustego 126a</li>
+                  <li>Wrocław Magnolia ul. Legnicka 58</li>
+                </ul>
+              </div>
+            </div>
+            <div className="half">
+              <div className="task__description-header">
+                <h3>Pozostałe</h3>
+              </div>
+              <div className="task__description-more">
+                <ul>
+                  <li>Augustów Castorama Smart ul. Mazurska 10</li>
+                  <li>Mława Castorama Smart Al. Świętego Wojciecha 17</li>
+                  <li>
+                    Ostrów Wielkopolski Castorama Smart ul. Ks. Prałata Czesława
+                    Majorka 2
+                  </li>
+                  <li>Warszawa Ursus Express ul. Herbu Oksza 24</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
       </section>
@@ -152,7 +166,7 @@ const Pilot = () => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa_Szczecin_Stargard/Kontakt_Szczecin_Stargard_fin.xlsx?d=w05a6c94df30549129cec74f144430942&csf=1&web=1&e=sNSptb"
+                href={urlContactListSzczecin}
                 style={{ color: "red" }}
               >
                 Szczecin (kliknij!)
@@ -163,7 +177,7 @@ const Pilot = () => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/_layouts/15/Doc.aspx?sourcedoc=%7BEC54F71B-2189-49E3-977B-82E03FBE1048%7D&file=Kontakt_Warszawa_Pilot_aktualizacja24.10.xlsx&action=default&mobileredirect=true"
+                href={urlContactListWarszawa}
                 style={{ color: "red" }}
               >
                 Warszawa (kliknij!)
@@ -174,7 +188,7 @@ const Pilot = () => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/_layouts/15/Doc.aspx?sourcedoc=%7B08DC2CFA-5241-425A-891C-E2423B4F881B%7D&file=Kontakt%20ze%20sklepem-%20z%20kim%20si%C4%99%20kontaktowa%C4%87-%20Wroc%C5%82aw..xlsx&action=default&mobileredirect=true"
+                href={urlContactListWroclaw}
                 style={{ color: "red" }}
               >
                 Wrocław (kliknij!)

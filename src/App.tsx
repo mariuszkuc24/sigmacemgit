@@ -2,14 +2,15 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Landing from './components/Landing/Landing';
 import Pilot from './components/Pilot/Pilot';
-import Skuchecker from './components/Skuchecker/skuchecker';
+import Skuchecker from './components/Skuchecker/Skuchecker';
 import Login from './components/Login/Login';
 import logo from './assets/logo-light-2021.png';
 import reportIcon from './assets/images/alert.svg';
-import './App.css';
+import './App.scss';
 
 
 const App = () => {
+  const urlReportAnError="https://forms.clickup.com/2441912/f/2agnr-2588/AKR8LYVGRWAJMZPHUO";
   return (
     <Router>
       <div className="App">
@@ -34,7 +35,7 @@ const App = () => {
               </li>
               <li className='navbar__list-item'>
                 <a className="report-error" target="_blank" rel="noopener noreferrer"
-                  href="https://forms.clickup.com/2441912/f/2agnr-2588/AKR8LYVGRWAJMZPHUO"><img src={reportIcon} alt="rep" />Zgłoś błąd Manago!</a>
+                  href={urlReportAnError}><img src={reportIcon} alt="rep" />Zgłoś błąd Manago!</a>
               </li>
             </ul>
           </nav>

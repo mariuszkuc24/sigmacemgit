@@ -1,3 +1,4 @@
+import { url } from "inspector";
 import React from "react";
 import { useState } from "react";
 import "./landing.scss";
@@ -13,6 +14,12 @@ const Landing = () => {
   const urlCastoramaAtomia="https://mebleatomia.castorama.pl/";
   const urlCastoramaKitchen="https://kuchnie.castorama.pl/";
   const urlCastoramaFurnitureAssembly = "https://kuchnie.castorama.pl/pl/zakup-i-montaz/usluga-montazu/";
+  const urlCastoramaCastoPro ="https://castopro.castorama.pl/pl/home";
+  const urlCastoramaBrandList = "https://www.castorama.pl/lp/strefa-marek";
+  const urlMicrosoftOutlook = "https://outlook.office365.com/";
+  const urlMicrosoftOffice="https://www.office.com/";
+  const urlMoniti = "https://admin.moniti.app/#/login?r=%2Fpersonal";
+  const urlWorkSchedule = "https://intelevospzoo-my.sharepoint.com/:x:/g/personal/krzysztof_romanowski_sigmacem_com/EfDWMDQx_6BJu5RahIuOyzUBS3xzI9UPVe5nI4RsiQTqAw?e=4%3AOaquSM&at=9&CID=E4C11732-21FA-4974-9FEB-59AEBD0EF62E&wdLOR=c72776B2B-0819-430F-AAD9-EF743C86678A";
 
   return (
     <div>
@@ -128,7 +135,7 @@ const Landing = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://castopro.castorama.pl/pl/home"
+            href={urlCastoramaCastoPro}
           >
             CastoPro
           </a>
@@ -136,7 +143,7 @@ const Landing = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.castorama.pl/lp/strefa-marek"
+            href={urlCastoramaBrandList}
           >
             Strefa Marek
           </a>
@@ -151,7 +158,7 @@ const Landing = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://outlook.office365.com/"
+            href={urlMicrosoftOutlook}
           >
             Outlook
           </a>
@@ -159,7 +166,7 @@ const Landing = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.office.com/"
+            href={urlMicrosoftOffice}
           >
             Office
           </a>
@@ -167,7 +174,7 @@ const Landing = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://admin.moniti.app/#/login?r=%2Fpersonal"
+            href={urlMoniti}
           >
             Moniti
           </a>
@@ -175,7 +182,7 @@ const Landing = () => {
             className="btn-link"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://intelevospzoo-my.sharepoint.com/:x:/g/personal/krzysztof_romanowski_sigmacem_com/EfDWMDQx_6BJu5RahIuOyzUBS3xzI9UPVe5nI4RsiQTqAw?e=4%3AOaquSM&at=9&CID=E4C11732-21FA-4974-9FEB-59AEBD0EF62E&wdLOR=c72776B2B-0819-430F-AAD9-EF743C86678A"
+            href={urlWorkSchedule}
           >
             Grafik
           </a>
