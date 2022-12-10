@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./skuchecker.scss";
+<<<<<<< HEAD
 
 const ShowShopSection = ({ inputed }: any) => {
   let shopSection: any = '';
@@ -10,6 +11,13 @@ const ShowShopSection = ({ inputed }: any) => {
   console.log('inputed', inputed.length);
 
   if (inputed.length ===5 || inputed.length ===6) {
+=======
+const ShowShopSection = ({ inputed }: any) => {
+  let shopSection: any;
+  let shopSectors: any=[];
+  const firstNumAtEnteredSku = parseInt(inputed.charAt(0));
+ 
+>>>>>>> f79e3e2d26d14f12f1a9d533e344ed89b8e23126
     switch (firstNumAtEnteredSku) {
       case 1:
         shopSection = "Metalowy";
@@ -52,6 +60,7 @@ const ShowShopSection = ({ inputed }: any) => {
         shopSectors = ["Nie ta takiego sektoru, spróbuj ponownie!"];
         break;
     }
+<<<<<<< HEAD
   } else if (inputed.length>6) {
     shopSection = "Podano za długi numer SKU, spróbuj ponownie!";
       shopSectors = ["Podano za długi numer SKU, spróbuj ponownie!"];
@@ -67,6 +76,17 @@ const ShowShopSection = ({ inputed }: any) => {
   );
 };
 
+=======
+  return (
+    <div id="list-info">
+      <b>Dział:</b>
+      <ul id="list-section">{shopSection}</ul>
+      <b>Sektor/Sektory:</b>
+      <ul id="list-sectors">{shopSectors.map((shopSector: any)=>(<li key={shopSector}>{shopSector}</li>))}</ul>
+    </div>
+  );
+};
+>>>>>>> f79e3e2d26d14f12f1a9d533e344ed89b8e23126
 const Skuchecker = () => {
   const [value, setValue] = useState("");
 
