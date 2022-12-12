@@ -107,6 +107,13 @@ const Pilot = () => {
           <h2>Przydatne pliki</h2>
         </div>
         <section className="section-links__container">
+        <div style={{textAlign: "center"}}>
+            <h1>Poradniki</h1>
+            <ExternalLinkButton
+              namePage="Procedury"
+              urlToPage={urlProcedures}
+            ></ExternalLinkButton>
+          </div>
           <div style={{textAlign: "center"}}>
             <h1>Szczecin</h1>
             <ExternalLinkButton
@@ -141,15 +148,15 @@ const Pilot = () => {
             ></ExternalLinkButton>
           </div>
           <div style={{textAlign: "center"}}>
-            <h1>Inne pliki</h1>
+            <h1>Kontakt inne</h1>
             <ExternalLinkButton
-              namePage="Kontakt Zestawienie"
+              namePage="Smarty/Expess"
+              urlToPage="#"
+            ></ExternalLinkButton>
+            <ExternalLinkButton
+              namePage="Zestawienie"
               urlToPage={urlContactToAll}
-            ></ExternalLinkButton>
-            <ExternalLinkButton
-              namePage="Procedury"
-              urlToPage={urlProcedures}
-            ></ExternalLinkButton>
+            ></ExternalLinkButton>   
           </div>
         </section>
       </section>
