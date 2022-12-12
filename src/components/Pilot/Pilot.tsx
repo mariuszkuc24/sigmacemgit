@@ -1,15 +1,69 @@
 import React from "react";
 import { useState } from "react";
+import ShopListItem from "../ShopListItem/ShopListItem";
 import "./pilot.scss";
-const urlProcedures = "https://intelevospzoo.sharepoint.com/:w:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa/Pilot_Wroc%C5%82aw_Warszawa_scenariusze_post%C4%99powania.docx?d=w654a3254fd804b0d830335e4733b5026&csf=1&web=1&e=s1p7vk";
-const urlContactListSzczecin ="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa_Szczecin_Stargard/Kontakt_Szczecin_Stargard_fin.xlsx?d=w05a6c94df30549129cec74f144430942&csf=1&web=1&e=sNSptb";
-const urlContactListWarszawa="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa/Kontakt_Warszawa_Pilot_aktualizacja24.10.xlsx?d=wec54f71b218949e3977b82e03fbe1048&csf=1&web=1&e=1auWyg";
-const urlContactListWroclaw="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa/Kontakt%20ze%20sklepem-%20z%20kim%20si%C4%99%20kontaktowa%C4%87-%20Wroc%C5%82aw..xlsx?d=w08dc2cfa5241425a891ce2423b4f881b&csf=1&web=1&e=gCYptJ";
-const urlContactToAll ="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Aktualne_Zestawienie_Kontaktowe_Castorama%2027.06.2022.xlsx?d=w7daa371e51894b58aa0922af97f47971&csf=1&web=1&e=cKs0O8";
-const urlServicesListSzczecin="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa_Szczecin_Stargard/Szczecin_Stargard_us%C5%82ugi_fin2.xlsx?d=wfa892ccfca0e457d9d7c73c028464b07&csf=1&web=1&e=PsVUEc";
-const urlServicesListWarszawa="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa_Szczecin_Stargard/Kopia%20pliku%20Pilot%20Warszawa%20-%20Us%C5%82ugi_finalna_wersja.xlsx?d=wdcf17179ff394eecae44a1be24ab226f&csf=1&web=1&e=GAowoW";
-const urlServicesListWroclaw="https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa/zestawienia_do%20uzupe%C5%82nienia%20sklepy_ca%C5%82o%C5%9B%C4%87%201.xlsx?d=w717b6aa3d15b4377a2dbff687b3063de&csf=1&web=1&e=hzYYLu";
-const Pilot = () => { 
+const urlProcedures =
+  "https://intelevospzoo.sharepoint.com/:w:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa/Pilot_Wroc%C5%82aw_Warszawa_scenariusze_post%C4%99powania.docx?d=w654a3254fd804b0d830335e4733b5026&csf=1&web=1&e=s1p7vk";
+const urlContactListSzczecin =
+  "https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa_Szczecin_Stargard/Kontakt_Szczecin_Stargard_fin.xlsx?d=w05a6c94df30549129cec74f144430942&csf=1&web=1&e=sNSptb";
+const urlContactListWarszawa =
+  "https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa/Kontakt_Warszawa_Pilot_aktualizacja24.10.xlsx?d=wec54f71b218949e3977b82e03fbe1048&csf=1&web=1&e=1auWyg";
+const urlContactListWroclaw =
+  "https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa/Kontakt%20ze%20sklepem-%20z%20kim%20si%C4%99%20kontaktowa%C4%87-%20Wroc%C5%82aw..xlsx?d=w08dc2cfa5241425a891ce2423b4f881b&csf=1&web=1&e=gCYptJ";
+const urlContactToAll =
+  "https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Aktualne_Zestawienie_Kontaktowe_Castorama%2027.06.2022.xlsx?d=w7daa371e51894b58aa0922af97f47971&csf=1&web=1&e=cKs0O8";
+const urlServicesListSzczecin =
+  "https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa_Szczecin_Stargard/Szczecin_Stargard_us%C5%82ugi_fin2.xlsx?d=wfa892ccfca0e457d9d7c73c028464b07&csf=1&web=1&e=PsVUEc";
+const urlServicesListWarszawa =
+  "https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa_Szczecin_Stargard/Kopia%20pliku%20Pilot%20Warszawa%20-%20Us%C5%82ugi_finalna_wersja.xlsx?d=wdcf17179ff394eecae44a1be24ab226f&csf=1&web=1&e=GAowoW";
+const urlServicesListWroclaw =
+  "https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa/zestawienia_do%20uzupe%C5%82nienia%20sklepy_ca%C5%82o%C5%9B%C4%87%201.xlsx?d=w717b6aa3d15b4377a2dbff687b3063de&csf=1&web=1&e=hzYYLu";
+// strony sklepów
+const shopWithHibrid = [
+  {
+    shopName: "Stargard ul. Tadeusza Kościuszki 73a",
+    urlToShop: "https://www.castorama.pl/sklepy/szczecin-struga.html",
+  },
+  {
+    shopName: "Świnoujście - Castorama Smart ul. Wojska Polskiego 96",
+    urlToShop: "https://www.castorama.pl/sklepy/swinoujscie.html",
+  },
+];
+const urlShopPageAugustow = "https://www.castorama.pl/sklepy/augustow.html";
+const urlShopPageMlawa = "https://www.castorama.pl/sklepy/mlawa.html";
+const urlShopPageOstrowWielkopolski =
+  "https://www.castorama.pl/sklepy/ostrow-wielkopolski.html";
+const urlShopPageStargard =
+  "https://www.castorama.pl/sklepy/stargard-lipnik.html";
+const urlShopPageSwinoujscie =
+  "https://www.castorama.pl/sklepy/swinoujscie.html";
+const urlShopPageSzczecinKuSloncu =
+  "https://www.castorama.pl/sklepy/szczecin-ku-sloncu.html";
+const urlShopPageSzczecinStruga =
+  "https://www.castorama.pl/sklepy/szczecin-struga.html";
+const urlShopPageSzczecinPoludniowa =
+  "https://www.castorama.pl/sklepy/szczecin-poludniowa.html";
+const urlShopPageWarszawaOkecie =
+  "https://www.castorama.pl/sklepy/warszawa-okecie.html";
+const urlShopPageWarszawaGrochowska =
+  "https://www.castorama.pl/sklepy/warszawa-grochowska.html";
+const urlShopPageWarszawaTargowek =
+  "https://www.castorama.pl/sklepy/warszawa-targowek.html";
+const urlShopPageWarszawaUrsusExpress =
+  "https://www.castorama.pl/sklepy/warszawa-ursus.html";
+const urlShopPageWarszawaWlochy =
+  "https://www.castorama.pl/sklepy/warszawa-wlochy.html";
+const urlShopPageWarszawaWolaPark =
+  "https://www.castorama.pl/sklepy/warszawa-wola-park.html";
+const urlShopPageWroclawBielany =
+  "https://www.castorama.pl/sklepy/bielany-wroclawskie.html";
+const urlShopPageWroclawGraniczna =
+  "https://www.castorama.pl/sklepy/wroclaw-graniczna.html";
+const urlShopPageWroclawKorona =
+  "https://www.castorama.pl/sklepy/wroclaw-korona.html";
+const urlShopPageWroclawMagnolia =
+  "https://www.castorama.pl/sklepy/wroclaw-magnolia.html";
+const Pilot = () => {
   return (
     <div>
       <section className="section-container casto-color">
@@ -98,20 +152,68 @@ const Pilot = () => {
               </div>
               <div className="task__description-more">
                 <ul>
-                  <li>Stargard ul. Tadeusza Kościuszki 73a</li>
-                  <li>Świnoujście - Castorama Smart ul. Wojska Polskiego 96</li>
-                  <li>Szczecin Ku Słońcu ul. Ku Słońcu 67b </li>
-                  <li>Szczecin Południowa ul. Południowa 21</li>
-                  <li>Szczecin Struga ul. Wiosenna 80</li>
-                  <li>Warszawa Grochowska ul. Grochowska 21</li>
-                  <li>Warszawa Okęcie Al. Krakowska 75</li>
-                  <li>Warszawa Targówek ul. Głębocka 15a</li>
-                  <li>Warszawa Wola Park ul. Górczewska 124</li>
-                  <li>Warszawa Włochy ul. Popularna 71</li>
-                  <li>Wrocław Bielany Wrocławskie ul. Czekoladowa 3</li>
-                  <li>Wrocław Graniczna ul. Graniczna 2a</li>
-                  <li>Wrocław Korona ul. B. Krzywoustego 126a</li>
-                  <li>Wrocław Magnolia ul. Legnicka 58</li>
+                {/* {shopWithHibrid.map((urlToShop) => (<ShopListItem
+                    urlToShop={shopWithHibrid.url}
+                    shopName={"Stargard ul. Tadeusza Kościuszki 73a"}
+                  ></ShopListItem>))} */}
+                  <ShopListItem
+                    urlToShop={urlShopPageStargard}
+                    shopName={"Stargard ul. Tadeusza Kościuszki 73a"}
+                  ></ShopListItem>
+                  <ShopListItem
+                    urlToShop={urlShopPageSwinoujscie}
+                    shopName={
+                      "Świnoujście - Castorama Smart ul. Wojska Polskiego 96"
+                    }
+                  ></ShopListItem>
+                  <ShopListItem
+                    urlToShop={urlShopPageSzczecinKuSloncu}
+                    shopName={"Szczecin Ku Słońcu ul. Ku Słońcu 67b"}
+                  ></ShopListItem>
+                  <ShopListItem
+                    urlToShop={urlShopPageSzczecinPoludniowa}
+                    shopName={"Szczecin Południowa ul. Południowa 21"}
+                  ></ShopListItem>
+                  <ShopListItem
+                    urlToShop={urlShopPageSzczecinStruga}
+                    shopName={"Szczecin Struga ul. Wiosenna 80"}
+                  ></ShopListItem>
+                  <ShopListItem
+                    urlToShop={urlShopPageWarszawaGrochowska}
+                    shopName={"Warszawa Grochowska ul. Grochowska 21"}
+                  ></ShopListItem>
+                  <ShopListItem
+                    urlToShop={urlShopPageWarszawaOkecie}
+                    shopName={"Warszawa Okęcie Al. Krakowska 75"}
+                  ></ShopListItem>
+                  <ShopListItem
+                    urlToShop={urlShopPageWarszawaTargowek}
+                    shopName={"Warszawa Targówek ul. Głębocka 15a"}
+                  ></ShopListItem>
+                  <ShopListItem
+                    urlToShop={urlShopPageWarszawaWolaPark}
+                    shopName={"Warszawa Wola Park ul. Górczewska 124"}
+                  ></ShopListItem>
+                  <ShopListItem
+                    urlToShop={urlShopPageWarszawaWlochy}
+                    shopName={"Warszawa Włochy ul. Popularna 71"}
+                  ></ShopListItem>
+                  <ShopListItem
+                    urlToShop={urlShopPageWroclawBielany}
+                    shopName={"Wrocław Bielany Wrocławskie ul. Czekoladowa 3"}
+                  ></ShopListItem>
+                  <ShopListItem
+                    urlToShop={urlShopPageWroclawGraniczna}
+                    shopName={"Wrocław Graniczna ul. Graniczna 2a"}
+                  ></ShopListItem>
+                  <ShopListItem
+                    urlToShop={urlShopPageWroclawKorona}
+                    shopName={"Wrocław Korona ul. B. Krzywoustego 126a"}
+                  ></ShopListItem>
+                  <ShopListItem
+                    urlToShop={urlShopPageWroclawMagnolia}
+                    shopName={"Wrocław Magnolia ul. Legnicka 58"}
+                  ></ShopListItem>
                 </ul>
               </div>
             </div>
@@ -121,13 +223,24 @@ const Pilot = () => {
               </div>
               <div className="task__description-more">
                 <ul>
-                  <li>Augustów Castorama Smart ul. Mazurska 10</li>
-                  <li>Mława Castorama Smart Al. Świętego Wojciecha 17</li>
-                  <li>
-                    Ostrów Wielkopolski Castorama Smart ul. Ks. Prałata Czesława
-                    Majorka 2
-                  </li>
-                  <li>Warszawa Ursus Express ul. Herbu Oksza 24</li>
+                  <ShopListItem
+                    urlToShop={urlShopPageAugustow}
+                    shopName={"Augustów Castorama Smart ul. Mazurska 10"}
+                  ></ShopListItem>
+                  <ShopListItem
+                    urlToShop={urlShopPageMlawa}
+                    shopName={"Mława Castorama Smart Al. Świętego Wojciecha 17"}
+                  ></ShopListItem>
+                  <ShopListItem
+                    urlToShop={urlShopPageOstrowWielkopolski}
+                    shopName={
+                      "Ostrów Wielkopolski Castorama Smart ul. Ks. Prałata Czesława Majorka 2"
+                    }
+                  ></ShopListItem>
+                  <ShopListItem
+                    urlToShop={urlShopPageWarszawaUrsusExpress}
+                    shopName={"Warszawa Ursus Express ul. Herbu Oksza 24"}
+                  ></ShopListItem>
                 </ul>
               </div>
             </div>

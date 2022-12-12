@@ -4,6 +4,7 @@ import Landing from './components/Landing/Landing';
 import Pilot from './components/Pilot/Pilot';
 import Skuchecker from './components/Skuchecker/Skuchecker';
 import Login from './components/Login/Login';
+import NotFound from './components/NotFound/NotFound';
 import logo from './assets/logo-light-2021.png';
 import reportIcon from './assets/images/alert.svg';
 import './App.scss';
@@ -46,6 +47,7 @@ const App = () => {
             <Route path='/pilot' element={< Pilot />}></Route>
             <Route path='/skuchecker' element={< Skuchecker />}></Route>
             <Route path='/login' element={< Login />}></Route>
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
 
