@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import ShopListItem from "../ShopListItem/ShopListItem";
+import ExternalLinkButton from "../ExternatLinkButton/ExternatLinkButton";
 import "./pilot.scss";
 const urlProcedures =
   "https://intelevospzoo.sharepoint.com/:w:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa/Pilot_Wroc%C5%82aw_Warszawa_scenariusze_post%C4%99powania.docx?d=w654a3254fd804b0d830335e4733b5026&csf=1&web=1&e=s1p7vk";
@@ -19,6 +20,7 @@ const urlServicesListWarszawa =
 const urlServicesListWroclaw =
   "https://intelevospzoo.sharepoint.com/:x:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa/zestawienia_do%20uzupe%C5%82nienia%20sklepy_ca%C5%82o%C5%9B%C4%87%201.xlsx?d=w717b6aa3d15b4377a2dbff687b3063de&csf=1&web=1&e=hzYYLu";
 // strony sklepów
+
 const shopWithHibrid = [
   {
     shopName: "Stargard ul. Tadeusza Kościuszki 73a",
@@ -28,41 +30,75 @@ const shopWithHibrid = [
     shopName: "Świnoujście - Castorama Smart ul. Wojska Polskiego 96",
     urlToShop: "https://www.castorama.pl/sklepy/swinoujscie.html",
   },
+  {
+    shopName: "Szczecin Ku Słońcu ul. Ku Słońcu 67b",
+    urlToShop: "https://www.castorama.pl/sklepy/szczecin-ku-sloncu.html",
+  },
+  {
+    shopName: "Szczecin Południowa ul. Południowa 21",
+    urlToShop: "https://www.castorama.pl/sklepy/szczecin-poludniowa.htmll",
+  },
+  {
+    shopName: "Szczecin Struga ul. Wiosenna 80",
+    urlToShop: "https://www.castorama.pl/sklepy/szczecin-struga.html",
+  },
+  {
+    shopName: "Warszawa Grochowska ul. Grochowska 21",
+    urlToShop: "https://www.castorama.pl/sklepy/warszawa-grochowska.html",
+  },
+  {
+    shopName: "Warszawa Okęcie Al. Krakowska 75",
+    urlToShop: "https://www.castorama.pl/sklepy/warszawa-okecie.html",
+  },
+  {
+    shopName: "Warszawa Targówek ul. Głębocka 15a",
+    urlToShop: "https://www.castorama.pl/sklepy/warszawa-targowek.html",
+  },
+  {
+    shopName: "Warszawa Włochy ul. Popularna 71",
+    urlToShop: "https://www.castorama.pl/sklepy/warszawa-wlochy.html",
+  },
+  {
+    shopName: "Warszawa Wola Park ul. Górczewska 124",
+    urlToShop: "https://www.castorama.pl/sklepy/warszawa-wola-park.html",
+  },
+
+  {
+    shopName: "Wrocław Bielany Wrocławskie ul. Czekoladowa 3",
+    urlToShop: "https://www.castorama.pl/sklepy/bielany-wroclawskie.html",
+  },
+  {
+    shopName: "Wrocław Graniczna ul. Graniczna 2a",
+    urlToShop: "https://www.castorama.pl/sklepy/wroclaw-graniczna.html",
+  },
+  {
+    shopName: "Wrocław Korona ul. B. Krzywoustego 126a",
+    urlToShop: "https://www.castorama.pl/sklepy/wroclaw-korona.html",
+  },
+  {
+    shopName: "Wrocław Magnolia ul. Legnicka 58",
+    urlToShop: "https://www.castorama.pl/sklepy/wroclaw-magnolia.html",
+  },
 ];
-const urlShopPageAugustow = "https://www.castorama.pl/sklepy/augustow.html";
-const urlShopPageMlawa = "https://www.castorama.pl/sklepy/mlawa.html";
-const urlShopPageOstrowWielkopolski =
-  "https://www.castorama.pl/sklepy/ostrow-wielkopolski.html";
-const urlShopPageStargard =
-  "https://www.castorama.pl/sklepy/stargard-lipnik.html";
-const urlShopPageSwinoujscie =
-  "https://www.castorama.pl/sklepy/swinoujscie.html";
-const urlShopPageSzczecinKuSloncu =
-  "https://www.castorama.pl/sklepy/szczecin-ku-sloncu.html";
-const urlShopPageSzczecinStruga =
-  "https://www.castorama.pl/sklepy/szczecin-struga.html";
-const urlShopPageSzczecinPoludniowa =
-  "https://www.castorama.pl/sklepy/szczecin-poludniowa.html";
-const urlShopPageWarszawaOkecie =
-  "https://www.castorama.pl/sklepy/warszawa-okecie.html";
-const urlShopPageWarszawaGrochowska =
-  "https://www.castorama.pl/sklepy/warszawa-grochowska.html";
-const urlShopPageWarszawaTargowek =
-  "https://www.castorama.pl/sklepy/warszawa-targowek.html";
-const urlShopPageWarszawaUrsusExpress =
-  "https://www.castorama.pl/sklepy/warszawa-ursus.html";
-const urlShopPageWarszawaWlochy =
-  "https://www.castorama.pl/sklepy/warszawa-wlochy.html";
-const urlShopPageWarszawaWolaPark =
-  "https://www.castorama.pl/sklepy/warszawa-wola-park.html";
-const urlShopPageWroclawBielany =
-  "https://www.castorama.pl/sklepy/bielany-wroclawskie.html";
-const urlShopPageWroclawGraniczna =
-  "https://www.castorama.pl/sklepy/wroclaw-graniczna.html";
-const urlShopPageWroclawKorona =
-  "https://www.castorama.pl/sklepy/wroclaw-korona.html";
-const urlShopPageWroclawMagnolia =
-  "https://www.castorama.pl/sklepy/wroclaw-magnolia.html";
+const shopWithnoutHibrid = [
+  {
+    shopName: "Augustów Castorama Smart ul. Mazurska 10",
+    urlToShop: "https://www.castorama.pl/sklepy/augustow.html",
+  },
+  {
+    shopName: "Mława Castorama Smart Al. Świętego Wojciecha 17",
+    urlToShop: "https://www.castorama.pl/sklepy/mlawa.html",
+  },
+  {
+    shopName:
+      "Ostrów Wielkopolski Castorama Smart ul. Ks. Prałata Czesława Majorka 2",
+    urlToShop: "https://www.castorama.pl/sklepy/ostrow-wielkopolski.html",
+  },
+  {
+    shopName: "Warszawa Ursus Express ul. Herbu Oksza 24",
+    urlToShop: "https://www.castorama.pl/sklepy/warszawa-ursus.html",
+  },
+];
 const Pilot = () => {
   return (
     <div>
@@ -71,70 +107,50 @@ const Pilot = () => {
           <h2>Przydatne pliki</h2>
         </div>
         <section className="section-links__container">
-          <a
-            className="btn-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            href={urlProcedures}
-          >
-            Procedury
-          </a>
-          <a
-            className="btn-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            href={urlContactListSzczecin}
-          >
-            Kontakt Szczecin
-          </a>
-          <a
-            className="btn-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            href={urlContactListWarszawa}
-          >
-            Kontakt Warszawa
-          </a>
-          <a
-            className="btn-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            href={urlContactListWroclaw}
-          >
-            Kontakt Wrocław
-          </a>
-          <a
-            className="btn-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            href={urlContactToAll}
-          >
-            Kontakt Zestawienie
-          </a>
-          <a
-            className="btn-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            href={urlServicesListSzczecin}
-          >
-            Usługi Szczecin
-          </a>
-          <a
-            className="btn-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            href={urlServicesListWarszawa}
-          >
-            Usługi Warszawa
-          </a>
-          <a
-            className="btn-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            href={urlServicesListWroclaw}
-          >
-            Usługi Wrocław
-          </a>
+          <div style={{textAlign: "center"}}>
+            <h1>Szczecin</h1>
+            <ExternalLinkButton
+              namePage="Kontakt"
+              urlToPage={urlContactListSzczecin}
+            ></ExternalLinkButton>
+            <ExternalLinkButton
+              namePage="Usługi Cennik"
+              urlToPage={urlServicesListSzczecin}
+            ></ExternalLinkButton>
+          </div>
+          <div style={{textAlign: "center"}}>
+            <h1>Warszawa</h1>
+            <ExternalLinkButton
+              namePage="Kontakt"
+              urlToPage={urlContactListWarszawa}
+            ></ExternalLinkButton>
+            <ExternalLinkButton
+              namePage="Usługi Cennik"
+              urlToPage={urlServicesListWarszawa}
+            ></ExternalLinkButton>
+          </div>
+          <div style={{textAlign: "center"}}>
+            <h1>Wrocław</h1>
+            <ExternalLinkButton
+              namePage="Kontakt"
+              urlToPage={urlContactListWroclaw}
+            ></ExternalLinkButton>
+            <ExternalLinkButton
+              namePage="Usługi Cennik"
+              urlToPage={urlServicesListWroclaw}
+            ></ExternalLinkButton>
+          </div>
+          <div style={{textAlign: "center"}}>
+            <h1>Inne pliki</h1>
+            <ExternalLinkButton
+              namePage="Kontakt Zestawienie"
+              urlToPage={urlContactToAll}
+            ></ExternalLinkButton>
+            <ExternalLinkButton
+              namePage="Procedury"
+              urlToPage={urlProcedures}
+            ></ExternalLinkButton>
+          </div>
         </section>
       </section>
       <section className="task" id="sklepy_lista-obslugiwanych-sklepow">
@@ -152,68 +168,15 @@ const Pilot = () => {
               </div>
               <div className="task__description-more">
                 <ul>
-                {/* {shopWithHibrid.map((urlToShop) => (<ShopListItem
-                    urlToShop={shopWithHibrid.url}
-                    shopName={"Stargard ul. Tadeusza Kościuszki 73a"}
-                  ></ShopListItem>))} */}
-                  <ShopListItem
-                    urlToShop={urlShopPageStargard}
-                    shopName={"Stargard ul. Tadeusza Kościuszki 73a"}
-                  ></ShopListItem>
-                  <ShopListItem
-                    urlToShop={urlShopPageSwinoujscie}
-                    shopName={
-                      "Świnoujście - Castorama Smart ul. Wojska Polskiego 96"
-                    }
-                  ></ShopListItem>
-                  <ShopListItem
-                    urlToShop={urlShopPageSzczecinKuSloncu}
-                    shopName={"Szczecin Ku Słońcu ul. Ku Słońcu 67b"}
-                  ></ShopListItem>
-                  <ShopListItem
-                    urlToShop={urlShopPageSzczecinPoludniowa}
-                    shopName={"Szczecin Południowa ul. Południowa 21"}
-                  ></ShopListItem>
-                  <ShopListItem
-                    urlToShop={urlShopPageSzczecinStruga}
-                    shopName={"Szczecin Struga ul. Wiosenna 80"}
-                  ></ShopListItem>
-                  <ShopListItem
-                    urlToShop={urlShopPageWarszawaGrochowska}
-                    shopName={"Warszawa Grochowska ul. Grochowska 21"}
-                  ></ShopListItem>
-                  <ShopListItem
-                    urlToShop={urlShopPageWarszawaOkecie}
-                    shopName={"Warszawa Okęcie Al. Krakowska 75"}
-                  ></ShopListItem>
-                  <ShopListItem
-                    urlToShop={urlShopPageWarszawaTargowek}
-                    shopName={"Warszawa Targówek ul. Głębocka 15a"}
-                  ></ShopListItem>
-                  <ShopListItem
-                    urlToShop={urlShopPageWarszawaWolaPark}
-                    shopName={"Warszawa Wola Park ul. Górczewska 124"}
-                  ></ShopListItem>
-                  <ShopListItem
-                    urlToShop={urlShopPageWarszawaWlochy}
-                    shopName={"Warszawa Włochy ul. Popularna 71"}
-                  ></ShopListItem>
-                  <ShopListItem
-                    urlToShop={urlShopPageWroclawBielany}
-                    shopName={"Wrocław Bielany Wrocławskie ul. Czekoladowa 3"}
-                  ></ShopListItem>
-                  <ShopListItem
-                    urlToShop={urlShopPageWroclawGraniczna}
-                    shopName={"Wrocław Graniczna ul. Graniczna 2a"}
-                  ></ShopListItem>
-                  <ShopListItem
-                    urlToShop={urlShopPageWroclawKorona}
-                    shopName={"Wrocław Korona ul. B. Krzywoustego 126a"}
-                  ></ShopListItem>
-                  <ShopListItem
-                    urlToShop={urlShopPageWroclawMagnolia}
-                    shopName={"Wrocław Magnolia ul. Legnicka 58"}
-                  ></ShopListItem>
+                  {shopWithHibrid.map((d, idx) => {
+                    return (
+                      <ShopListItem
+                        key={idx}
+                        urlToShop={d.urlToShop}
+                        shopName={d.shopName}
+                      ></ShopListItem>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
@@ -223,24 +186,15 @@ const Pilot = () => {
               </div>
               <div className="task__description-more">
                 <ul>
-                  <ShopListItem
-                    urlToShop={urlShopPageAugustow}
-                    shopName={"Augustów Castorama Smart ul. Mazurska 10"}
-                  ></ShopListItem>
-                  <ShopListItem
-                    urlToShop={urlShopPageMlawa}
-                    shopName={"Mława Castorama Smart Al. Świętego Wojciecha 17"}
-                  ></ShopListItem>
-                  <ShopListItem
-                    urlToShop={urlShopPageOstrowWielkopolski}
-                    shopName={
-                      "Ostrów Wielkopolski Castorama Smart ul. Ks. Prałata Czesława Majorka 2"
-                    }
-                  ></ShopListItem>
-                  <ShopListItem
-                    urlToShop={urlShopPageWarszawaUrsusExpress}
-                    shopName={"Warszawa Ursus Express ul. Herbu Oksza 24"}
-                  ></ShopListItem>
+                  {shopWithnoutHibrid.map((d, idx) => {
+                    return (
+                      <ShopListItem
+                        key={idx}
+                        urlToShop={d.urlToShop}
+                        shopName={d.shopName}
+                      ></ShopListItem>
+                    );
+                  })}
                 </ul>
               </div>
             </div>

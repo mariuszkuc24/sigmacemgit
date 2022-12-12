@@ -1,6 +1,7 @@
 import { url } from "inspector";
 import React from "react";
 import { useState } from "react";
+import ExternalLinkButton from "../ExternatLinkButton/ExternatLinkButton";
 import "./landing.scss";
 const Landing = () => {
   const urlManago360 = "https://manago360.com/pl/azure/sigmacem/login";
@@ -28,46 +29,11 @@ const Landing = () => {
           <h2 className="text--gold">Castorama - Systemy</h2>
         </div>
         <section className="section-links__container">
-          <a
-            className="btn-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            href={urlManago360}
-          >
-            Manago 360
-          </a>
-          <a
-            className="btn-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            href={urlMagento}
-          >
-            Magento
-          </a>
-          <a
-            className="btn-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            href={urlDTS}
-          >
-            DTS
-          </a>
-          <a
-            className="btn-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            href={urlOrderPanel}
-          >
-            Order Panel
-          </a>
-          <a
-            className="btn-link btn--red"
-            rel="noopener noreferrer"
-            target="_blank"
-            href={urlProductComments}
-          >
-            Produktowe
-          </a>
+          <ExternalLinkButton namePage="Manago 360" urlToPage={urlManago360}></ExternalLinkButton>
+          <ExternalLinkButton namePage="Magento" urlToPage={urlMagento}></ExternalLinkButton>
+          <ExternalLinkButton namePage="DTS" urlToPage={urlDTS}></ExternalLinkButton>
+          <ExternalLinkButton namePage="Order Panel" urlToPage={urlOrderPanel}></ExternalLinkButton>
+          <ExternalLinkButton namePage="Produktowe" urlToPage={urlProductComments}></ExternalLinkButton>
         </section>
         <div className="section-container__header section-container__header--casto">
           <h2>Castorama - Poradniki do systemów</h2>
