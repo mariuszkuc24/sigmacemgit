@@ -1,11 +1,15 @@
 import React from "react";
 import { useState } from "react";
 import "./skuchecker.scss";
+
 const ShowShopSection = ({ inputed }: any) => {
-  let shopSection: any;
-  let shopSectors: any=[];
+  let shopSection: any = '';
+  let shopSectors: any = [];
   const firstNumAtEnteredSku = parseInt(inputed.charAt(0));
- 
+
+  console.log('inputed', inputed.length);
+
+  if (inputed.length ===5 || inputed.length ===6) {
     switch (firstNumAtEnteredSku) {
       case 1:
         shopSection = "Metalowy";
@@ -48,15 +52,21 @@ const ShowShopSection = ({ inputed }: any) => {
         shopSectors = ["Nie ta takiego sektoru, spróbuj ponownie!"];
         break;
     }
+  } else if (inputed.length>6) {
+    shopSection = "Podano za długi numer SKU, spróbuj ponownie!";
+      shopSectors = ["Podano za długi numer SKU, spróbuj ponownie!"];
+  }
+
   return (
     <div id="list-info">
-      <b>Dział:</b>
+      <strong>Dział:</strong>
       <ul id="list-section">{shopSection}</ul>
-      <b>Sektor/Sektory:</b>
-      <ul id="list-sectors">{shopSectors.map((shopSector: any)=>(<li key={shopSector}>{shopSector}</li>))}</ul>
+      <strong>Sektor/Sektory:</strong>
+      <ul id="list-sectors">{shopSectors.map((shopSector: any) => (<li key={shopSector}>{shopSector}</li>))}</ul>
     </div>
   );
 };
+
 const Skuchecker = () => {
   const [value, setValue] = useState("");
 

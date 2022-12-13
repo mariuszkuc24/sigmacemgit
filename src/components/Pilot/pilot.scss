@@ -11,6 +11,13 @@
     background: var(--light_blue);
     color: #ffd700;
   }
+  .task-content-divide-half {
+    display: flex;
+    justify-content: space-between;
+  }
+  .half {
+    width:45%;
+  }
   &__description {
     padding: 16px;
     h3 {
@@ -20,4 +27,8 @@
       padding-left: 16px;
     }
   }
+}
+
+.link-to-shop {
+  color: var(--light_blue);
 }
