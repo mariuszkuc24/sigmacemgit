@@ -1,0 +1,33 @@
+:root {
+  --gold: #ffdd00;
+  --red: #d71921;
+  --light_blue: #0078d7;
+  --dark_blue: #006abe;
+  --white: #ffffff;
+}
+.content-card {
+  margin: 20px;
+  border: 3px solid var(--dark_blue);
+  box-shadow: 8px 10px 24px -6px rgba(0, 0, 0, 0.5);
+}
+
+.content-card__header {
+  width: 100%;
+  padding: 16px 0;
+  background: var(--light_blue);
+  color: var(--white);
+  text-align: center;
+  font-weight: 900;
+}
+
+.sigma-heading {
+    background: var(--red);
+}
+
+.content-card__content {
+    background-color: var(--white);
+}
+
+.gold-header {
+    color: var(--gold);
+}

@@ -2,8 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Landing from './components/Landing/Landing';
 import Pilot from './components/Pilot/Pilot';
-import Skuchecker from './components/Skuchecker/skuchecker';
-import Login from './components/Login/login';
+import Skuchecker from './components/Skuchecker/Skuchecker';
+import ServiceChecker from './components/ServiceChecker/ServiceChecker';
+import Login from './components/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import logo from './assets/logo-light-2021.png';
 import reportIcon from './assets/images/alert.svg';
@@ -26,10 +27,13 @@ const App = () => {
                 <Link to="/">Strona Główna</Link>
               </li>
               <li className='navbar__list-item'>
-                <Link to="/pilot">Program pilotażowy</Link>
+                <Link to="/pilot">Program pilotażowy</Link>``
               </li>
               <li className='navbar__list-item'>
                 <Link to="/skuchecker">Sprawdź dział produktu</Link>
+              </li>
+              <li className='navbar__list-item'>
+                <Link to="/servicechecker">Usługi</Link>
               </li>
               <li className='navbar__list-item'>
                 <Link to="/login">Zaloguj</Link>
@@ -46,6 +50,7 @@ const App = () => {
             <Route path='/' element={< Landing />}></Route>
             <Route path='/pilot' element={< Pilot />}></Route>
             <Route path='/skuchecker' element={< Skuchecker />}></Route>
+            <Route path='/servicechecker' element={< ServiceChecker />}></Route>
             <Route path='/login' element={< Login />}></Route>
             <Route path="*" element={<NotFound />} />
           </Routes>

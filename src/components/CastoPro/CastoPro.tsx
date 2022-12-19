@@ -1,12 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import "./Login.scss";
-const Login = () => {
+const CastoPro = () => {
   return (
     <div>
-        <p>Logowanie</p>
+        <p>CastoPro</p>
     </div>
   );
 };
 
-export default Login;
+export default CastoPro;
