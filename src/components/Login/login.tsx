@@ -4,7 +4,7 @@ import "./Login.scss";
 const Login = () => {
   return (
     <div>
-        <p>Logowanie</p>
+        <p>Logowanieee</p>
     </div>
   );
 };
