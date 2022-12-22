@@ -1,5 +1,5 @@
 import React from "react";
-import { companies, services } from "../mock";
+import { companies, services } from "../../mock";
 import "./SeviceChecker.scss";
 
 const ServiceChecker = () => {

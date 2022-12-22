@@ -1,9 +1,9 @@
 import { url } from "inspector";
 import React from "react";
 import { useState } from "react";
-import ContentCard from "../ContentCard/ContentCard";
-import ExternalLinkButton from "../ExternatLinkButton/ExternatLinkButton";
-import { systemsAndProductComments, usefullLinks, otherLinks } from "../Mock/mockLinks";
+import ContentCard from "../../UI/ContentCard/ContentCard";
+import ExternalLinkButton from "../../ExternatLinkButton/ExternatLinkButton";
+import { systemsAndProductComments, usefullLinks, otherLinks } from "../../Mock/mockLinks";
 import "./landing.scss";
 const Landing = () => {
   return (

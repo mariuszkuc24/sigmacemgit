@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import ShopListItem from "../ShopListItem/ShopListItem";
-import ContentCard from "../ContentCard/ContentCard";
-import ExternalLinkButton from "../ExternatLinkButton/ExternatLinkButton";
-import {shopWithHibrid, shopWithnoutHibrid } from "../Mock/mockLinks";
+import ShopListItem from "../../ShopListItem/ShopListItem";
+import ContentCard from "../../UI/ContentCard/ContentCard";
+import ExternalLinkButton from "../../ExternatLinkButton/ExternatLinkButton";
+import {shopWithHibrid, shopWithnoutHibrid } from "../../Mock/mockLinks";
 import "./pilot.scss";
 
 const Pilot = () => {
