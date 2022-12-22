@@ -15,25 +15,12 @@ const Landing = () => {
         "https://admin.castorama.pl/index.php/magento/sales_order/index/key/b1e59173d955e2db295e60fb01126ca5b763d6c45c093482c28d4cb277a39a43/",
     },
     {
-      pageName: "Magento 2",
-      urlToPage:
-        " https://admin.castorama.pl/magento2admin/sales/order/index/key/4bc0018a56c23cfd79b442caf5c9d852dd74c338ea00edc307d9ede049c70517/",
-    },
-    {
       pageName: "DTS",
       urlToPage: "http://platform.dts.pl/login",
     },
     {
       pageName: "OrderPanel",
       urlToPage: "https://admin.castorama.pl/phone-order-panel//",
-    },
-    {
-      pageName: "Citrix",
-      urlToPage: "https://myapps.kfplc.com/logon/LogonPoint/index.html",
-    },
-    {
-      pageName: "Moduł Wyceny",
-      urlToPage: "https://www.modulwyceny.tmsys.pl/products",
     },
     {
       pageName: "Produktowe",
@@ -53,15 +40,6 @@ const Landing = () => {
     {
       pageName: "Regulaminy",
       urlToPage: "https://www.castorama.pl/inne-regulaminy",
-    },
-    {
-      pageName: "Najlepsze okazje",
-      urlToPage:
-        "https://oferty.castorama.pl/najlepsze-okazje/?gclid=EAIaIQobChMI3pHkp-Pp6AIViNWaCh0p0wIfEAEYASAAEgIOBPD_BwE#page_1",
-    },
-    {
-      pageName: "Zaprojektuj własne Meble",
-      urlToPage: "https://atomia.tmsys.pl/",
     },
     {
       pageName: "Meble Atomia",
@@ -87,14 +65,6 @@ const Landing = () => {
     {
       pageName: "Zawiadomienia",
       urlToPage: "https://www.castorama.pl/informacje/erraty-i-zawiadomienia",
-    },
-    {
-      pageName: "Zamów do Niemczech",
-      urlToPage: "https://www.castorama.pl/deutschland-szczecin",
-    },
-    {
-      pageName: "Fundacja Castorama",
-      urlToPage: "https://www.castorama.pl/fundacja-castorama",
     },
     {
       pageName: "Znajdź fachowca",

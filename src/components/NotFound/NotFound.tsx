@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import "./notfound.scss"
 const NotFound = () => {
   return (
     <div>
