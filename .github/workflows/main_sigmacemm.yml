@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'sigmacemm'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_19ffd30fd71a43a2b00eb1ab6c2dc3f8 }}
+        publish-profile: $
         images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_ea38c84d00c74c589685c09d46156f69 }}/mariuszkuc24/sigmacem:${{ github.sha }}'
