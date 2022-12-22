@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v1
       with:
         registry: https://mcr.microsoft.com/
-        username: ${{ secrets.AzureAppService_ContainerUsername_7b17cf09423d4b9dbc20001fde36761c }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_fb918c866f814297aa9eb844c37addfc }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_742544f7403b4d88bce6a121e6af63b2 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_9d248662cc674818a8b146d914e26aad }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_7b17cf09423d4b9dbc20001fde36761c }}/appsvc/staticsite:${{ github.sha }}
+        tags: mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_742544f7403b4d88bce6a121e6af63b2 }}/appsvc/staticsite:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'Sigmacemgit'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_43ab21569c004e249e815f5a3f55e508 }}
-        images: 'mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_7b17cf09423d4b9dbc20001fde36761c }}/appsvc/staticsite:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_4a1b104290c04d3fa69cb2950b28570b }}
+        images: 'mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_742544f7403b4d88bce6a121e6af63b2 }}/appsvc/staticsite:${{ github.sha }}'
