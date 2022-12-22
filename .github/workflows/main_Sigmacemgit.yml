@@ -1,0 +1,51 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Build and deploy container app to Azure Web App - Sigmacemgit
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: 'ubuntu-latest'
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Log in to registry
+      uses: docker/login-action@v1
+      with:
+        registry: https://mcr.microsoft.com/
+        username: ${{ secrets.AzureAppService_ContainerUsername_7b17cf09423d4b9dbc20001fde36761c }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_fb918c866f814297aa9eb844c37addfc }}
+
+    - name: Build and push container image to registry
+      uses: docker/build-push-action@v2
+      with:
+        push: true
+        tags: mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_7b17cf09423d4b9dbc20001fde36761c }}/appsvc/staticsite:${{ github.sha }}
+        file: ./Dockerfile
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: 'production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+    - name: Deploy to Azure Web App
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'Sigmacemgit'
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_43ab21569c004e249e815f5a3f55e508 }}
+        images: 'mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_7b17cf09423d4b9dbc20001fde36761c }}/appsvc/staticsite:${{ github.sha }}'
