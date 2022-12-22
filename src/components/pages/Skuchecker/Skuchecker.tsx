@@ -2,14 +2,14 @@ import React from "react";
 import { useState } from "react";
 import "./skuchecker.scss";
 
-const ShowShopSection = ({ inputed }: any) => {
-  let shopSection: any = '';
+const ShowShopSection = (props: any) => {
+  let shopSection: any = "";
   let shopSectors: any = [];
-  const firstNumAtEnteredSku = parseInt(inputed.charAt(0));
+  const firstNumAtEnteredSku = parseInt(props.inputed.charAt(0));
 
-  console.log('inputed', inputed.length);
+  console.log("inputed", props.inputed.length);
 
-  if (inputed.length ===5 || inputed.length ===6) {
+  if (props.inputed.length === 5 || props.inputed.length === 6) {
     switch (firstNumAtEnteredSku) {
       case 1:
         shopSection = "Metalowy";
@@ -52,9 +52,9 @@ const ShowShopSection = ({ inputed }: any) => {
         shopSectors = ["Nie ta takiego sektoru, spróbuj ponownie!"];
         break;
     }
-  } else if (inputed.length>6) {
+  } else if (props.inputed.length > 6) {
     shopSection = "Podano za długi numer SKU, spróbuj ponownie!";
-      shopSectors = ["Podano za długi numer SKU, spróbuj ponownie!"];
+    shopSectors = ["Podano za długi numer SKU, spróbuj ponownie!"];
   }
 
   return (
@@ -62,16 +62,20 @@ const ShowShopSection = ({ inputed }: any) => {
       <strong>Dział:</strong>
       <ul id="list-section">{shopSection}</ul>
       <strong>Sektor/Sektory:</strong>
-      <ul id="list-sectors">{shopSectors.map((shopSector: any) => (<li key={shopSector}>{shopSector}</li>))}</ul>
+      <ul id="list-sectors">
+        {shopSectors.map((shopSector: any) => (
+          <li key={shopSector}>{shopSector}</li>
+        ))}
+      </ul>
     </div>
   );
 };
 
 const Skuchecker = () => {
-  const [value, setValue] = useState("");
+  const [enteredSku, setEnteredSku] = useState("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
+    setEnteredSku(event.target.value);
   };
 
   return (
@@ -90,7 +94,7 @@ const Skuchecker = () => {
             type="text"
             id="inp"
             placeholder="&nbsp;"
-            value={value}
+            value={enteredSku}
             onChange={handleChange}
           />
           <span className="label">Numer SKU</span>
@@ -103,9 +107,9 @@ const Skuchecker = () => {
         </div>
         <div className="sku-checker-output-panel-content">
           <span>
-            Numer SKU: <em id="log-number">{value}</em>
+            Numer SKU: <em id="log-number">{enteredSku}</em>
           </span>
-          <ShowShopSection inputed={value} />
+          <ShowShopSection inputed={enteredSku} />
         </div>
       </div>
     </section>

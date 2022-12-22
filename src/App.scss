@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap");
 
 :root {
   --gold: #ffdd00;
@@ -19,7 +19,7 @@ a {
 
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background: url("./assets/images/background.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -45,6 +45,10 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.navbar__brand img {
+  filter: brightness(0) invert(1);
 }
 
 .navbar__list {

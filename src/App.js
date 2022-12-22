@@ -6,6 +6,7 @@ import Skuchecker from './components/pages/Skuchecker/Skuchecker';
 import Login from './components/pages/Login/Login';
 import NotFound from './components/pages/NotFound/NotFound';
 import logo from './assets/logo-light-2021.png';
+import newLogo from './assets/sigmacem-logo-png.png'
 import reportIcon from './assets/images/alert.svg';
 import './App.scss';
 
