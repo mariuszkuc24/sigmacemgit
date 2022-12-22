@@ -3,7 +3,7 @@ import { useState } from "react";
 const CastoPro = () => {
   return (
     <div>
-        <p>CastoProo</p>
+        <p>CastoPro</p>
     </div>
   );
 };
