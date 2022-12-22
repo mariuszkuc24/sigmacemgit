@@ -1,24 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Landing from './components/Landing/Landing';
+import Pilot from './components/Pilot/Pilot';
+import Skuchecker from './components/Skuchecker/skuchecker';
+import Login from './components/Login/login';
+import NotFound from './components/NotFound/NotFound';
+import logo from './assets/logo-light-2021.png';
+import reportIcon from './assets/images/alert.svg';
+import './App.scss';
 
-function App() {
+
+const App = () => {
+  const urlReportAnError="https://forms.clickup.com/2441912/f/2agnr-2588/AKR8LYVGRWAJMZPHUO";
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <header className='main__header '>
+          <nav className="navbar">
+            <div className="navbar__brand">
+            <Link to="/"><img src={logo} alt="SigmaCem" /></Link>
+              
+            </div>
+            <ul className='navbar__list'>
+              <li className='navbar__list-item'>
+                <Link to="/">Strona Główna</Link>
+              </li>
+              <li className='navbar__list-item'>
+                <Link to="/pilot">Program pilotażowy</Link>
+              </li>
+              <li className='navbar__list-item'>
+                <Link to="/skuchecker">Sprawdź dział produktu</Link>
+              </li>
+              <li className='navbar__list-item'>
+                <Link to="/login">Zaloguj</Link>
+              </li>
+              <li className='navbar__list-item'>
+                <a className="report-error" target="_blank" rel="noopener noreferrer"
+                  href={urlReportAnError}><img src={reportIcon} alt="rep" />Zgłoś błąd Manago!</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <div className='main-container'>
+          <Routes>
+            <Route path='/' element={< Landing />}></Route>
+            <Route path='/pilot' element={< Pilot />}></Route>
+            <Route path='/skuchecker' element={< Skuchecker />}></Route>
+            <Route path='/login' element={< Login />}></Route>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+
+      </div>
+    </Router>
   );
 }
 
