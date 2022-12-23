@@ -1,3 +1,5 @@
+FROM mcr.microsoft.com/appsvc/node:10-lts
+RUN npm install pm2 -g
 # pull official base image
 FROM node:13.12.0-alpine
 
@@ -17,4 +19,6 @@ RUN npm install react-scripts@3.4.1 -g --silent
 COPY . ./
 
 # start app
-CMD ["npm", "start"]
+CMD ["pm2-runtime", "app.js"]
+
+ENTRYPOINT ["pm2", "start", "--no-daemon", "/opt/startup/default-static-site.js"]
