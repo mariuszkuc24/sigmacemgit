@@ -1,7 +1,6 @@
-# Docker
-# Build a Docker image
-# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
-
+- task: DockerInstaller@0
+  inputs:
+    dockerVersion: '17.09.0-ce'
 trigger:
 - main
 
@@ -27,3 +26,10 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/dockerfile'
         tags: |
           $(tag)
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure subscription 1(86f0fad6-7177-40a1-9ec3-e1fc4be89543)'
+    appType: 'webAppContainer'
+    WebAppName: 'sigmacem'
