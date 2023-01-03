@@ -1,0 +1,19 @@
+.App {
+    background-color: #18191a;
+}
+.diva{
+    width:100% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+
+    background-color: #242526;
+    color: #B0B3B8;
+    border: 1px solid rgba(255,255,255, 0.1);
+    height: 640px;
+    width:320px;
+    border-radius: 16px;
+}

@@ -1,0 +1,28 @@
+:root {
+  --primary-text-color: #bdc1c6;
+  --secondary-text-color: #9aa0a6;
+  --tertiary-text-color: #e8eaed;
+  --primary-backgrond-color: #202124;
+  --secondary-background-color: #303134;
+  --tertiary-background-color: #3c4043;
+  --red-color: #ee4043;
+}
+
+.sku-checker-output-panel {
+  .title {
+    width: 100%;
+    border-bottom: 1px solid var(--red-color);
+    text-align: center;
+    color: var(--primary-text-color);
+    padding: 16px 0 0;
+  }
+  h4 {
+    color: var(--primary-text-color);
+    margin: 12px;
+  }
+  ul {
+    margin: 0;
+    color: var(--secondary-text-color);
+    font-weight: 300;
+  }
+}
