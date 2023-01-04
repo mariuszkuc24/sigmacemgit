@@ -1,0 +1,19 @@
+:root {
+    --primary-text-color: #bdc1c6;
+    --secondary-text-color: #9aa0a6;
+    --tertiary-text-color: #e8eaed;
+    --primary-backgrond-color: #202124;
+    --secondary-background-color: #303134;
+    --tertiary-background-color: #3c4043;
+    --red-color: #ee4043;
+  }
+
+.aside-nav {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    background-color: var(--tertiary-background-color);
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);
+  }
