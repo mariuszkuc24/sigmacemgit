@@ -1,104 +1,36 @@
-import { BrowserRouter, Link } from "react-router-dom";
-import GuideTaskListItem from "../GuideTaskListItem/GuideTaskListItem";
-import GuideTaskAsideNav from "../GuideTaskAsideNav/GuideTaskAsideNav";
-
-interface Type {
-  category: string;
-  percentage: number;
-}
-interface iTaskNavListItem {
-  navListItemId: string;
-  navListItemName: string;
-  taskCategory: string;
-}
-
-interface iTaskNavList {
-  data: Array<iTaskNavListItem>;
-}
+import GuideTaskListItem from "../GuideTaskListItem";
+import GuideTaskAsideNav from "../GuideTaskAsideNav";
+import { tasksLists } from "../mock"; 
 const GuideTaskList = () => {
-  const tasksLists = [
-    {
-      taskId: "asortyment001",
-      taskTitle: "Asortyment - A",
-      taskCategory: "Asortyment",
-      taskSubcategory: "Dostępność",
-      taskPriority: "A ja mama :D",
-      taskDescription: "a",
-    },
-    {
-      taskId: "asortyment002",
-      taskTitle: "Asortyment - B",
-      taskCategory: "Asortyment",
-      taskSubcategory: "Dostępność",
-      taskPriority: "",
-      taskDescription: "a",
-    },
-    {
-      taskId: "asortyment022",
-      taskTitle: "Asortyment - C",
-      taskCategory: "Asortyment",
-      taskSubcategory: "Dostępność",
-      taskPriority: "",
-      taskDescription: "a",
-    },
-    {
-      taskId: "asortyment003",
-      taskTitle: "Asortyment - D",
-      taskCategory: "Asortyment",
-      taskSubcategory: "Dostępność",
-      taskPriority: "",
-      taskDescription: "a",
-    },
-    {
-      taskId: "asortyment004",
-      taskTitle: "Asortyment - E",
-      taskCategory: "Asortyment",
-      taskSubcategory: "Dostępność",
-      taskPriority: "nISKI",
-      taskDescription: "a",
-    },
-    {
-      taskId: "asortyment005",
-      taskTitle: "Asortyment - F",
-      taskCategory: "Asortyment",
-      taskSubcategory: "Dostępność",
-      taskPriority: "wYSOKI",
-      taskDescription: "a",
-    },
-  ];
-  const taskNavList: iTaskNavListItem[] = [];
-  tasksLists.sort((a, b) => (a.taskTitle > b.taskTitle ? 1 : -1));
-
-  tasksLists.map((d) => {
-    const obj = {
-      navListItemId: d.taskId,
-      navListItemName: d.taskTitle,
-      taskCategory: d.taskCategory,
-    };
-    taskNavList.push(obj);
-  });
-  console.log("loged:", taskNavList);
-
   // sortowanie po taskTitle
+  const taskNavList = tasksLists.sort((a, b) => (a.name > b.name ? 1 : -1)).map((d) => ({
+    navListItemId: d.id,
+    navListItemName: d.name,
+    taskCategory: d.subCategories,
+  }));
+
+  if (taskNavList.length === 0) {
+    return (
+      <div>Loading...</div>
+    )
+  }
 
   return (
     <div>
-      <GuideTaskAsideNav navListItems={taskNavList}></GuideTaskAsideNav>
-      <div style={{ marginLeft: "240px" }}>
-        {tasksLists.map((d, idx) => {
-          console.log(d.taskCategory);
-          return (
-            <GuideTaskListItem
-              key={idx}
-              taskId={d.taskId}
-              taskTitle={d.taskTitle}
-              taskCategory={d.taskCategory}
-              taskSubcategory={d.taskSubcategory}
-              taskPriority={d.taskPriority}
-              taskDescription={d.taskDescription}
-            ></GuideTaskListItem>
-          );
-        })}
+      <GuideTaskAsideNav navListItems={taskNavList} />
+      <div style={{ marginLeft: "300px" }}>
+        {taskNavList.map((task) => task.taskCategory.map(category => (
+          <GuideTaskListItem
+            key={category.taskId}
+            taskSkuCode={category.taskSkuCode}
+            taskId={category.taskId}
+            taskTitle={category.taskTitle}
+            taskCategory={category.taskCategory}
+            taskSubcategory={category.taskSubcategory}
+            taskPriority={category.taskPriority}
+            taskContent={category.taskContent}
+          />
+        )))}
       </div>
     </div>
   );

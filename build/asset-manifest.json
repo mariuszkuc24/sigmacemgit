@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.72389ddc.css",
-    "main.js": "/static/js/main.8f38066f.js",
+    "main.css": "/static/css/main.a325421c.css",
+    "main.js": "/static/js/main.2d77253d.js",
     "static/js/787.8e7b8d65.chunk.js": "/static/js/787.8e7b8d65.chunk.js",
     "static/media/sigmacem-logo.png": "/static/media/sigmacem-logo.0990c0012155bff305c9.png",
     "index.html": "/index.html",
     "static/media/alert.svg": "/static/media/alert.a751ea95104c4bc7588a28a31de4d128.svg",
-    "main.72389ddc.css.map": "/static/css/main.72389ddc.css.map",
-    "main.8f38066f.js.map": "/static/js/main.8f38066f.js.map",
+    "static/media/arrow.svg": "/static/media/arrow.a60b514879ecfd1050c67d817440dfde.svg",
+    "main.a325421c.css.map": "/static/css/main.a325421c.css.map",
+    "main.2d77253d.js.map": "/static/js/main.2d77253d.js.map",
     "787.8e7b8d65.chunk.js.map": "/static/js/787.8e7b8d65.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.72389ddc.css",
-    "static/js/main.8f38066f.js"
+    "static/css/main.a325421c.css",
+    "static/js/main.2d77253d.js"
   ]
 }

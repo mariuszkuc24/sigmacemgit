@@ -1,37 +1,42 @@
-import { MouseEventHandler, useState } from "react";
-// import "./GuideTaskAsideNav.scss";
-interface NavListItems {
-  navListItemName: string;
-  navListItemId: string;
-}
+import { useState } from "react";
+import { ITaskCategory } from "../GuideTaskAsideNav/GuideTaskAsideNav";
+import arrowImg from "../../assets/images/arrow.svg";
+import "./GuideTaskAsideNavItem.scss";
+
 interface Props {
   navListName: string;
-  navListItems: NavListItems[];
+  navListItemsCategories: ITaskCategory[];
 }
-const GuideTaskAsideNavItem = ( props: Props) => {
+
+const GuideTaskAsideNavItem = ({
+  navListName,
+  navListItemsCategories,
+}: Props) => {
   const [isShown, setIsShown] = useState(false);
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     // 👇️ toggle shown state
     setIsShown((current) => !current);
-
-
-
   };
-  const navListItems = props.navListItems;
-  console.log("show",navListItems, props.navListItems);
+
   return (
     <li>
       <div className="dropdown" onClick={handleClick}>
-        {props.navListName}{" "}
+        <div className={!isShown ? "arrow-img" : "arrow-img rotated"}>
+          <img src={arrowImg} />
+        </div>
+        {navListName}{" "}
       </div>
       {isShown && (
         <div className="dropdown-content">
           <ul>
-        {props.navListItems.map((d, idx) => {
-              return (<li key={idx}>
-                <a href={'#'+d.navListItemId}>{d.navListItemName}</a>
-              </li>)})}
+            {navListItemsCategories.map((category) => {
+              return (
+                <li key={category.taskId}>
+                  <a href={`#${category.taskId}`}>{category.taskTitle}</a>
+                </li>
+              );
+            })}
           </ul>
         </div>
       )}

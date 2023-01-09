@@ -1,10 +1,13 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import "./Header.scss";
+import React from "react";
+import { Link } from "react-router-dom";
 import logo from '../../../assets/images/sigmacem-logo.png';
-import reportIcon from '../../../assets/images/alert.svg'
+import reportIcon from '../../../assets/images/alert.svg';
+import "./Header.scss";
+
 const Header = (props: any) => {
   const urlReportAnError =
     "https://forms.clickup.com/2441912/f/2agnr-2588/AKR8LYVGRWAJMZPHUO";
+  
   return (
     <header className="main__header ">
       <nav className="navbar">

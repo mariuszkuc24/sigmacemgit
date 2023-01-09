@@ -1,19 +1,46 @@
 :root {
-    --primary-text-color: #bdc1c6;
-    --secondary-text-color: #9aa0a6;
-    --tertiary-text-color: #e8eaed;
-    --primary-backgrond-color: #202124;
-    --secondary-background-color: #303134;
-    --tertiary-background-color: #3c4043;
-    --red-color: #ee4043;
-  }
-
+  --primary-text-color: #bdc1c6;
+  --secondary-text-color: #9aa0a6;
+  --tertiary-text-color: #e8eaed;
+  --primary-backgrond-color: #202124;
+  --secondary-background-color: #303134;
+  --tertiary-background-color: #3c4043;
+  --red-color: #ee4043;
+}
+.aside-nav-container {
+  padding: 0;
+  margin: 0;
+}
 .aside-nav {
-    position: fixed;
-    top: 68px;
-    left: 0;
-    width: 240px;
-    height: 100vh;
-    background-color: var(--tertiary-background-color);
-    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  width: 300px;
+  height: 85vh;
+  border: 1px solid #3c4043;
+  border-radius: 16px;
+  background-color: var(--primary-background-color);
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  &_header {
+    border-bottom: 1px solid var(--red-color);
+    text-align: center;
+    color: #bdc1c6;
+    padding: 20px;
+    h2 {
+      font-weight: 800;
+    }
   }
+  nav {
+    height: 90%;
+  }
+  &-container {
+    height: 100%;
+    position: relative;
+    overflow-y: scroll;
+  }
+  li {
+    list-style: none;
+    padding: 0;
+  }
+}

@@ -4,7 +4,7 @@ import ColumnLinksContainer from "../../UI/Containers/ColumnLinksContainer/Colum
 import ShopListItem from "../../ShopListItem/ShopListItem";
 import ContentBlock from "../../UI/Containers/ContentBlock/ContentBlock";
 import { shopWithHibrid, shopWithnoutHibrid } from "../../Mock/mockLinks";
-import './Pilot.scss';
+import "./Pilot.scss";
 const urlProcedures =
   "https://intelevospzoo.sharepoint.com/:w:/r/sites/CastoramaCommunicationCenter/Shared%20Documents/General/Piloty_Wroc%C5%82aw_Warszawa/Pilot_Wroc%C5%82aw_Warszawa_scenariusze_post%C4%99powania.docx?d=w654a3254fd804b0d830335e4733b5026&csf=1&web=1&e=s1p7vk";
 const urlContactListSzczecin =

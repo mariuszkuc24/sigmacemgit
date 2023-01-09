@@ -1,11 +1,7 @@
-import GuideTaskListItem from "../../GuideTaskListItem/GuideTaskListItem";
-import GuideTaskList from "../../GuideTaskList/GuideTaskList";
+import GuideTaskList from "../../GuideTaskList";
 
-const Guides = () => {
-
-  return (
-    <GuideTaskList></GuideTaskList>
-  )
-};
+const Guides = () => (
+  <GuideTaskList />
+);
 
 export default Guides;
