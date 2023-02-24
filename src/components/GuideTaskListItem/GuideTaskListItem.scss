@@ -1,0 +1,21 @@
+:root {
+  --primary-text-color: #bdc1c6;
+  --secondary-text-color: #9aa0a6;
+  --tertiary-text-color: #e8eaed;
+  --primary-backgrond-color: #202124;
+  --secondary-background-color: #303134;
+  --tertiary-background-color: #3c4043;
+  --red-color: #ee4043;
+}
+
+.guide-task-list-item-categorization tbody tr td {
+  width: 250px;
+}
+
+.guide_task_list_item_link {
+  margin-top: 20px;
+  font-weight: 500;
+  a {
+    color: var(--red-color);
+  }
+}

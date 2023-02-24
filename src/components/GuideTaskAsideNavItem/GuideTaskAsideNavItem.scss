@@ -1,0 +1,52 @@
+:root {
+  --primary-text-color: #bdc1c6;
+  --secondary-text-color: #9aa0a6;
+  --tertiary-text-color: #e8eaed;
+  --primary-backgrond-color: #202124;
+  --secondary-background-color: #303134;
+  --tertiary-background-color: #3c4043;
+  --red-color: #ee4043;
+}
+
+.dropdown {
+  position: relative;
+  color: var(--secondary-text-color);
+  display: block;
+  padding: 16px 48px;
+  font-weight: 800;
+  cursor: pointer;
+  border-bottom: 3px solid var(--secondary-background-color);
+  user-select: none;
+  overflow: hidden;
+  .arrow-img {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color:#bdc1c6;
+  }
+}
+
+.rotated {
+  transform: rotate(90deg);
+}
+
+.dropdown-content {
+  background-color: #303134;
+  ul li {
+    padding: 8px 0;
+    a {
+        text-decoration: none;
+        color: var(--tertiary-text-color);
+        
+      }
+      a:before {
+        content: "\027A4";
+        margin-right: 8px;
+      }
+  }
+}
+
+.dropdown-content ul li a:hover,
+.dropdown-content ul li a:active {
+  color: #ffdc00;
+}
