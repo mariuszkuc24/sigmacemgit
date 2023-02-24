@@ -2,6 +2,10 @@
   "name": "sigmacemgit",
   "version": "0.1.0",
   "private": true,
+<<<<<<< HEAD
+=======
+  "homepage": ".",
+>>>>>>> a3a0a0df8be14f8caeecc021b8bf18d84f266da9
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
