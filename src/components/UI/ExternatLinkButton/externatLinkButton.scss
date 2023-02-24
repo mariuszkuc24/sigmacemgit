@@ -1,0 +1,37 @@
+.btn-link {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 55px;
+  margin: 8px;
+  border-bottom: 2px solid #202124;
+  border-radius: 10px;
+  color: #bdc1c6;
+  background-color: #303134;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+  &:hover {
+    color: #e8eaed;
+    border-color: #bdc1c6;
+    background: #3c4043;
+  }
+}
+
+@media (min-width: 1200px) {
+  .btn-link {
+    width: 160px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .btn-link {
+    width: 200px;
+  }
+}

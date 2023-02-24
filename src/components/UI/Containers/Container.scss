@@ -1,0 +1,49 @@
+:root {
+  --primary-text-color: #bdc1c6;
+  --secondary-text-color: #9aa0a6;
+  --tertiary-text-color: #e8eaed;
+  --primary-backgrond-color: #202124;
+  --secondary-background-color: #303134;
+  --tertiary-background-color: #3c4043;
+  --red-color: #ee4043;
+}
+
+.content-card {
+  background: #202124;
+  border-radius: 16px;
+  border: 1px solid #3c4043;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+  margin: 32px 20px;
+}
+
+.content-card__header {
+  text-align: center;
+  color: #bdc1c6;
+  padding: 20px 0 12px;
+  h2 {
+    font-weight: 800;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -22px;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 2px;
+      background: rgb(32, 33, 36);
+      background: linear-gradient(
+        90deg,
+        rgba(32, 33, 36, 1) 0%,
+        rgba(238, 64, 67, 1) 50%,
+        rgba(32, 33, 36, 1) 100%
+      );
+    }
+  }
+}
+
+.content-card__content {
+  padding: 24px 16px;
+}
